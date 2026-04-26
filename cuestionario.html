@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diagnóstico de Marketing | Parallax Ink</title>
+  <meta name="description" content="Evalúa en 3 minutos el estado real del marketing de tu negocio con nuestro diagnóstico semáforo gratuito." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@300;400;600;700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="styles.css" />
+  <!-- Meta Pixel -->
+  <script>
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1988819924686033');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1988819924686033&ev=PageView&noscript=1"/></noscript>
+</head>
+<body class="quiz-body">
+
+  <!-- HEADER -->
+  <header class="quiz-header">
+    <div class="container quiz-header__inner">
+      <a href="index.html" class="quiz-header__logo-link">
+        <img src="logo-parallaxink.png" alt="Parallax Ink" class="quiz-header__logo" />
+      </a>
+      <span class="quiz-header__label">Diagnóstico de Marketing</span>
+    </div>
+  </header>
+
+  <main class="quiz-main">
+
+    <!-- PANTALLA INTRO -->
+    <section id="quiz-intro">
+      <div class="container quiz-intro__inner">
+
+        <div class="quiz-intro__semaforo" aria-hidden="true">
+          <div class="qs-housing">
+            <span class="qs-luz qs-luz--red qs-luz--active"></span>
+            <span class="qs-luz qs-luz--yellow"></span>
+            <span class="qs-luz qs-luz--green"></span>
+          </div>
+        </div>
+
+        <div class="quiz-intro__content">
+          <div class="section-label">Diagnóstico gratuito</div>
+          <h1 class="quiz-intro__title">¿En qué semáforo está el marketing de tu negocio?</h1>
+          <p class="quiz-intro__desc">Responde 15 preguntas honestas sobre el estado actual de tu marketing. En menos de 3 minutos sabrás en qué áreas tienes claridad y dónde están tus mayores oportunidades de mejora.</p>
+
+          <div class="quiz-intro__legend">
+            <div class="quiz-legend-item">
+              <span class="quiz-legend-dot quiz-legend-dot--green"></span>
+              <div>
+                <strong>Verde</strong>
+                <span>Sí, lo tengo bajo control</span>
+              </div>
+            </div>
+            <div class="quiz-legend-item">
+              <span class="quiz-legend-dot quiz-legend-dot--yellow"></span>
+              <div>
+                <strong>Amarillo</strong>
+                <span>No lo hago de la mejor manera</span>
+              </div>
+            </div>
+            <div class="quiz-legend-item">
+              <span class="quiz-legend-dot quiz-legend-dot--red"></span>
+              <div>
+                <strong>Rojo</strong>
+                <span>Este aspecto está descuidado</span>
+              </div>
+            </div>
+          </div>
+
+          <button class="btn btn--scarlet btn--lg" onclick="startQuiz()">Comenzar diagnóstico</button>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- PREGUNTAS -->
+    <section id="quiz-section" hidden>
+      <div class="container quiz-section__inner">
+
+        <div class="qprogress">
+          <div class="qprogress__bar">
+            <div class="qprogress__fill" id="progress-fill"></div>
+          </div>
+          <span class="qprogress__label" id="progress-label">Pregunta 1 de 15</span>
+        </div>
+
+        <div class="qcard" id="qcard">
+          <div class="qcard__num" id="qcard-num">01</div>
+          <p class="qcard__question" id="qcard-question"></p>
+
+          <div class="qcard__options">
+            <button class="qoption qoption--green" onclick="answer('verde')">
+              <span class="qoption__dot"></span>
+              <div class="qoption__text">
+                <strong>Verde</strong>
+                <span>Sí, lo tengo bajo control</span>
+              </div>
+              <svg class="qoption__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <button class="qoption qoption--yellow" onclick="answer('amarillo')">
+              <span class="qoption__dot"></span>
+              <div class="qoption__text">
+                <strong>Amarillo</strong>
+                <span>No lo hago de la mejor manera</span>
+              </div>
+              <svg class="qoption__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+
+            <button class="qoption qoption--red" onclick="answer('rojo')">
+              <span class="qoption__dot"></span>
+              <div class="qoption__text">
+                <strong>Rojo</strong>
+                <span>Este aspecto está descuidado</span>
+              </div>
+              <svg class="qoption__arrow" width="20" height="20" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+                <path d="M4 10h12M12 6l4 4-4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- RESULTADOS -->
+    <section id="quiz-results" hidden>
+      <div class="container quiz-results-section">
+        <div class="qresults" id="qresults-content">
+          <!-- Llenado por JS -->
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <script>
+    const preguntas = [
+      "Tengo objetivos claros de marketing alineados con las metas de mi negocio.",
+      "Tengo un plan de marketing con pasos definidos y fechas concretas.",
+      "Sé cuánto invierto mensualmente en marketing digital y cómo se distribuye ese presupuesto.",
+      "Tengo perfectamente identificado quién es mi cliente ideal.",
+      "Sé qué problema resuelvo mejor que mis competidores.",
+      "He validado con clientes reales si mi propuesta de valor resulta atractiva.",
+      "Tomo decisiones de marketing con base en datos, no sólo en intuición.",
+      "Tengo instaladas herramientas de medición como GA4 o el Pixel de Meta.",
+      "Cuento con un reporte mensual que me muestra los indicadores clave de mi negocio.",
+      "Sé cuánto me cuesta conseguir un cliente nuevo.",
+      "Utilizo audiencias segmentadas o remarketing en mis campañas.",
+      "Tengo un flujo claro para dar seguimiento a los leads que llegan por mis campañas.",
+      "Cada publicación o campaña tiene un propósito definido (atraer, educar o vender).",
+      "Mi sitio web comunica claramente lo que hago y tiene llamadas a la acción visibles.",
+      "Ofrezco una experiencia simple para que el cliente pueda contactarme o comprar fácilmente."
+    ];
+
+    let current = 0;
+    const scores = { verde: 0, amarillo: 0, rojo: 0 };
+
+    function startQuiz() {
+      document.getElementById('quiz-intro').hidden = true;
+      document.getElementById('quiz-section').hidden = false;
+      if (typeof fbq !== 'undefined') fbq('trackCustom', 'DiagnosticoIniciado');
+      loadQuestion();
+    }
+
+    function loadQuestion() {
+      document.getElementById('qcard-num').textContent = String(current + 1).padStart(2, '0');
+      document.getElementById('qcard-question').textContent = preguntas[current];
+      document.getElementById('progress-fill').style.width = (current / preguntas.length * 100) + '%';
+      document.getElementById('progress-label').textContent = 'Pregunta ' + (current + 1) + ' de ' + preguntas.length;
+    }
+
+    function answer(color) {
+      scores[color]++;
+      current++;
+
+      if (current < preguntas.length) {
+        const card = document.getElementById('qcard');
+        card.classList.add('qcard--exit');
+        setTimeout(function() {
+          loadQuestion();
+          card.classList.remove('qcard--exit');
+        }, 260);
+      } else {
+        showResults();
+      }
+    }
+
+    function showResults() {
+      document.getElementById('quiz-section').hidden = true;
+      document.getElementById('quiz-results').hidden = false;
+      if (typeof fbq !== 'undefined') fbq('track', 'Lead', { content_name: 'Diagnostico Semaforo Completado' });
+
+      var overall, titulo, mensaje;
+
+      if (scores.rojo >= 7) {
+        overall = 'rojo';
+        titulo = 'Tu marketing necesita atención urgente';
+        mensaje = 'La mayoría de los pilares de tu marketing están sin resolver. Cada mes sin una estrategia clara es presupuesto que se diluye y oportunidades que se pierden. El primer paso es tener claridad — y eso empieza aquí.';
+      } else if (scores.verde >= 10) {
+        overall = 'verde';
+        titulo = 'Tu marketing tiene buenas bases';
+        mensaje = 'Estás mejor posicionado que la mayoría de las PyMES. Tienes claridad en varios frentes, pero aún hay áreas de oportunidad que, bien trabajadas, pueden multiplicar tus resultados de forma significativa.';
+      } else {
+        overall = 'amarillo';
+        titulo = 'Tu marketing está a medio camino';
+        mensaje = 'Tienes claridad en algunas áreas, pero hay vacíos importantes que pueden estar frenando tu crecimiento. Con una estrategia definida, esos huecos se convierten en las mayores ventajas de tu negocio.';
+      }
+
+      document.getElementById('qresults-content').innerHTML =
+        '<div class="qresults__semaforo">' +
+          '<div class="qs-housing qs-housing--lg">' +
+            '<span class="qs-luz qs-luz--red ' + (overall === 'rojo' ? 'qs-luz--active' : '') + '"></span>' +
+            '<span class="qs-luz qs-luz--yellow ' + (overall === 'amarillo' ? 'qs-luz--active' : '') + '"></span>' +
+            '<span class="qs-luz qs-luz--green ' + (overall === 'verde' ? 'qs-luz--active' : '') + '"></span>' +
+          '</div>' +
+        '</div>' +
+        '<h2 class="qresults__title">' + titulo + '</h2>' +
+        '<p class="qresults__message">' + mensaje + '</p>' +
+        '<div class="qresults__breakdown">' +
+          '<div class="qresults__stat qresults__stat--green">' +
+            '<span class="qresults__num">' + scores.verde + '</span>' +
+            '<span class="qresults__stat-label">Verde</span>' +
+          '</div>' +
+          '<div class="qresults__stat qresults__stat--yellow">' +
+            '<span class="qresults__num">' + scores.amarillo + '</span>' +
+            '<span class="qresults__stat-label">Amarillo</span>' +
+          '</div>' +
+          '<div class="qresults__stat qresults__stat--red">' +
+            '<span class="qresults__num">' + scores.rojo + '</span>' +
+            '<span class="qresults__stat-label">Rojo</span>' +
+          '</div>' +
+        '</div>' +
+        '<div class="qresults__cta-wrap">' +
+          '<a href="index.html#contacto" class="btn btn--scarlet btn--lg">Agenda tu diagnóstico inicial gratuito</a>' +
+          '<p class="qresults__note">Sin costo · Sin compromiso · Solo claridad sobre tu estrategia</p>' +
+        '</div>';
+    }
+
+    loadQuestion();
+  </script>
+
+</body>
+</html>
